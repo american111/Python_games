@@ -1,0 +1,35 @@
+def sontop():
+    import random
+    daraja_d = {
+        'qiyin':5,
+        'oson':10,
+    }
+    daraja = input('qiyinchilikni tanlang(oson/qiyin): ').lower()
+    urinishlar = daraja_d.get(daraja)
+    # urinishlar = 10
+    rSon = random.randint(1,100)
+    print(f'Men 1 dan 100 gacha bo`lgan raqam o`yladim: {urinishlar} ta urinish bilan topishingiz kerak bo`ladi')
+    sanoq = 0
+    print(rSon)
+    while sanoq != urinishlar:
+        javob = int(input('Son kiriting: '))
+        if javob == rSon:
+            print(f'To`g`ri javob siz yutdingiz!\n{sanoq+1}-urinishda topdingiz!')
+            break
+        else:
+            print('Xato')
+            if javob > rSon:
+                print('Men o`ylagan raqam kichikroq: ')
+            elif javob < rSon:
+                print('Men o`ylagan raqam kattaroq: ')
+            sanoq += 1
+        if sanoq == urinishlar:
+            print('Siz mag`lub bo`ldingiz!')
+            print(f'{rSon} edi!')
+            break
+
+
+
+sontop()
+baho = input('Dastur haqida fikringiz?  ')
+print('Fikringiz uchun raxmat\nO`yinimiz tugadi!')
